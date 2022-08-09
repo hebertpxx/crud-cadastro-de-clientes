@@ -256,6 +256,7 @@ h2 {
     }
 
     #tabela-clientes {
+        margin-top: 50px;
         border-spacing: 5px;
     }
 
@@ -265,6 +266,7 @@ h2 {
 
     #tabela-clientes tr {
         box-shadow: 0 1px 3px #999;
+        margin: 50px 0;
     }
 
     #tabela-clientes tr:hover {
@@ -278,7 +280,7 @@ h2 {
     }
 
     #tabela-clientes td {
-        margin: 10px 0;
+        margin: 5px 0;
     }
 
     .modal {
