@@ -1,0 +1,318 @@
+:root{
+    --primary-color: #222;
+    --secondary-color: #cdecfc;
+    --tertiary-color: #e3f1f8;
+    --shadow-color: #CCC;
+    --primary-text-color: #444;
+    --secondary-text-color: #FFF;
+    --button-blue-bg-color: #1FB6FF;
+    --button-green-bg-color: #13CE66;
+    --button-red-bg-color: #FF4949;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    font-family: 'Heebo', sans-serif;
+}
+
+header {
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 2px 2px 10px var(--shadow-color);
+    color: var(--secondary-text-color);
+    background-color: var(--primary-color);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+    gap: 20px;
+    width: 90%;
+    margin: 5vh auto;
+    padding: 50px;
+    box-shadow: 2px 2px 10px var(--shadow-color);
+}
+
+button.button {
+    height: 40px;
+    border-style: none;
+    padding: 6px 12px;
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: box-shadow .6s ease;
+}
+
+button.button:hover {
+    cursor: pointer;
+    box-shadow: inset 200px 0 0 #00000055;
+}
+
+button.blue {
+    background-color: var(--button-blue-bg-color);
+}
+
+button.green {
+    background-color: var(--button-green-bg-color);
+}
+
+button.red {
+    background-color: var(--button-red-bg-color);
+}
+
+#editar, #excluir {
+    padding: 0 15px;
+    margin: 0 3px;
+}
+
+#tabela-clientes {
+    width: 100%;
+    text-align: left;
+    user-select: none;
+}
+
+thead {
+    color: var(--secondary-text-color);
+}
+
+#tabela-clientes th {
+    height: 50px;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+}
+
+#tabela-clientes td {
+    height: 50px;;
+    padding-left: 20px;
+    color: var(--primary-text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    /* border: 1px solid #999; */
+}
+
+#tabela-clientes th:last-child,
+#tabela-clientes td:last-child {
+    padding: 0;
+    min-width: 140px;
+    text-align: center;
+}
+
+#tabela-clientes tr {
+    background-color: var(--secondary-color);
+}
+
+#tabela-clientes tr:hover {
+    background-color: var(--tertiary-color);
+}
+
+footer {
+    height: 10%;
+    width: 100%;
+    padding: 15px;
+    font-size: 0.7rem;
+    font-style: italic;
+    color: var(--primary-text-color);
+    text-align: center;
+    box-shadow: 2px 2px 10px var(--shadow-color);
+}
+
+/* Modal CSS */
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000090;
+}
+
+.modal {
+    opacity: 0;
+    z-index: -1;
+}
+
+.modal.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 50vw;
+    margin: 15vh auto;
+    background-color: white;
+    box-shadow: 1px 1px 10px black;
+}
+
+#modal-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+#fecharModal {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+#fecharModal:hover {
+    background-color: var(--button-red-bg-color);
+    color: var(--secondary-color);
+}
+
+#modal-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.modal-field {
+    width: calc(50% - 10px);
+    height: 40px;
+    outline-style: none;
+    border-style: none;
+    box-shadow: 0 0 2px black;
+    padding: 0 10px;
+    font-size: 1rem;
+}
+
+#modal-footer {
+    background-color: inherit;
+    text-align: right;
+}
+
+/* Mobile CSS */
+
+@media (max-width: 1100px) {
+    
+    header {
+        position: fixed;
+        width: 100%;
+    }
+
+    header.title {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 0;
+        margin: 20px 0 0 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    #cadastrar-cliente {
+        position: fixed;
+        top: 80vh;
+        left: 85vw;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        color: transparent;
+    }
+
+    #cadastrar-cliente::before {
+        content: "+";
+        color: #333;
+        font-size: 2rem;
+        width: 10px;
+        height: 10px;
+        left: 25px;
+        position: absolute;
+    }
+
+    #tabela-clientes {
+        border-spacing: 5px;
+    }
+
+    #tabela-clientes thead {
+        display: none;
+    }
+
+    #tabela-clientes tr {
+        box-shadow: 0 1px 3px #999;
+    }
+
+    #tabela-clientes tr:hover {
+        background-color: inherit;
+    }
+
+    #tabela-clientes td:not(:first-child) {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+
+    #tabela-clientes td {
+        margin: 10px 0;
+    }
+
+    .modal {
+        top: 100%;
+        transition: all 1s ease;
+    }
+
+    .modal.active {
+        top: 0;
+    }
+
+    #modal-content {
+        margin: 0;
+        width: 100%;
+        position: fixed;
+    }
+
+    #modal-header {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .modal-field {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #cadastrar-cliente {
+        left: 75vw;
+    }
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');

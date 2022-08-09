@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/553cb537d0.js" crossorigin="anonymous"></script>
+    <title>CRUD - Cadastro de Clientes</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Clientes</h1>
+    </header>
+    <main>
+        <button type="button" id="cadastrar-cliente" class="button blue">Cadastrar Cliente</button>
+        <table id="tabela-clientes">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Celular</th>
+                    <th>Cidade</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>Roberto Hebert de Souza Vinha</td>
+                    <td>hebert@gmail.com</td>
+                    <td>(17) 99240-0089</td>
+                    <td>São José do Rio Preto</td>
+                    <td>
+                        <button id="editar" type="button" class="button green" data-action="edite-0">Editar</button>
+                        <button id="excluir" type="button" class="button red" data-action="delete-0">Excluir</button>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+
+        <div id="modal" class="modal">
+            <div id="modal-content">
+                <header id="modal-header">
+                    <h2>Novo Cliente</h2>
+                    <span id="fecharModal">&#10006;</span>
+                </header>
+                <form id="modal-form">
+                    <input type="text" id="nome" class="modal-field" placeholder="Nome do Cliente" data-index="new" required>
+                    <input type="email" id="email" class="modal-field" placeholder="E-mail do Cliente" required>
+                    <input type="text" id="celular" class="modal-field" placeholder="Celular do Cliente" required>
+                    <input type="text" id="cidade" class="modal-field" placeholder="Cidade do Cliente" required>
+                </form>
+                <footer id="modal-footer">
+                    <button id="salvar" class="button green"><i class="fa-solid fa-floppy-disk"></i> &nbsp; Salvar</button>
+                    <button id="cancelar" class="button blue">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        Copyright ©Roberto Hebert
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
